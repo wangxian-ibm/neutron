@@ -26,7 +26,7 @@ from sqlalchemy.orm import joinedload
 from sqlalchemy import sql
 
 from neutron._i18n import _, _LI
-from neutron.common import constants as n_const
+from neutron.common import constants #as n_const
 from neutron.common import utils as n_utils
 from neutron.db import agents_db
 from neutron.db import agentschedulers_db
