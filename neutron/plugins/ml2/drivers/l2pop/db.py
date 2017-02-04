@@ -95,8 +95,6 @@ def get_nondistributed_active_network_ports(session, network_id):
     # Exclude DVR and HA router interfaces
     query = query.filter(models_v2.Port.device_owner !=
                          const.DEVICE_OWNER_DVR_INTERFACE)
-    ha_iface_ids_query = _get_ha_router_interface_ids(session, network_id)
-    query = query.filter(models_v2.Port.id.notin_(ha_iface_ids_query))
     return [(bind, agent) for bind, agent in query.all()
             if get_agent_ip(agent)]
 
