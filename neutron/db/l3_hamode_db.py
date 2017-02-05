@@ -449,7 +449,7 @@ class L3_HA_NAT_db_mixin(l3_dvr_db.L3_NAT_with_dvr_db_mixin,
         if router_is_uuid:
             router = self._get_router(context, router)
         if is_ha_router(router) and not is_distributed_router(router):
-            return constants.DEVICE_OWNER_HA_REPLICATED_INT
+            return constants.DEVICE_OWNER_ROUTER_INTF
         return super(L3_HA_NAT_db_mixin,
                      self)._get_device_owner(context, router)
 
